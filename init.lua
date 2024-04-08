@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -550,7 +550,6 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
-        -- ruby_ls = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -594,6 +593,7 @@ require('lazy').setup({
             require('lspconfig')[server_name].setup(server)
           end,
         },
+        require('lspconfig').solargraph.setup {},
       }
     end,
   },
